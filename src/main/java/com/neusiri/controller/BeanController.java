@@ -13,8 +13,10 @@ import javax.servlet.http.HttpServletResponse;
  */
 public class BeanController implements Controller {
 
-    public ModelAndView handleRequest(HttpServletRequest httpServletRequest, HttpServletResponse httpServletResponse) throws Exception {
+    public ModelAndView handleRequest(HttpServletRequest httpServletRequest, HttpServletResponse httpServletResponse) {
         System.out.println("BeanController run...");
-        return null;
+        ModelAndView mv = new ModelAndView("view");
+        mv.addObject("name","zhangsan");
+        throw new RuntimeException();
     }
 }
